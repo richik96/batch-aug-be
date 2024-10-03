@@ -1,12 +1,8 @@
-package OS1.Concurrency.AdderSubSynchronizedMethod;
-
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+package OS1.Concurrency.AdderSubProb;
 
 public class Client {
     public static void main(String[] args) throws InterruptedException {
         Count count = new Count();
-
         Adder adder = new Adder(count);
         Subtractor subtractor = new Subtractor(count);
 
@@ -18,6 +14,8 @@ public class Client {
 
         t1.join();
         t2.join();
-        System.out.println("Final value for count " + count.getValue());
+
+        //throws random value everytime we run it as it is not synchronized
+        System.out.println("Final value for count " + count.value);
     }
 }

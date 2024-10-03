@@ -1,6 +1,6 @@
 package OS1.Concurrency.AdderSubSynchronizedMethod;
 
-import java.util.concurrent.locks.Lock;
+//import java.util.concurrent.locks.Lock;
 
 public class Subtractor implements Runnable{
 
@@ -12,8 +12,9 @@ public class Subtractor implements Runnable{
 
     @Override
     public void run() {
-        for(int i = 1; i <=10000; i++){
+        for(int i = 1; i <=10; i++){
             count.incrementValue(-i);
+            System.out.println("Count in subtractor = " +count.getValue() + " in : "+Thread.currentThread().getName());
         }
 
     }
