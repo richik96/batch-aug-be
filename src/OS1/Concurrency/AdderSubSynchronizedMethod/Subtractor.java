@@ -7,7 +7,7 @@ public class Subtractor implements Runnable{
     Count count;
 
     public Subtractor(Count count1){
-        count = count1;
+        this.count = count1;
     }
 
     @Override

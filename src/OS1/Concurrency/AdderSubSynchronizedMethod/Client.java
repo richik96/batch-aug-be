@@ -1,4 +1,4 @@
-package OS1.Concurrency.AdderSubSynchronizedMethod;
+ package OS1.Concurrency.AdderSubSynchronizedMethod;
 
 // import java.util.concurrent.locks.Lock;
 // import java.util.concurrent.locks.ReentrantLock;
@@ -6,7 +6,8 @@ package OS1.Concurrency.AdderSubSynchronizedMethod;
 public class Client {
     public static void main(String[] args) throws InterruptedException {
         Count count = new Count();
-
+        //Lock lock = new ReentrantLock();
+        //Adder adder = new Adder(count, lock); 
         Adder adder = new Adder(count);
         Subtractor subtractor = new Subtractor(count);
 
