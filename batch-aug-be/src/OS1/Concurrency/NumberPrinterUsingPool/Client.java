@@ -9,12 +9,16 @@ public class Client {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         ExecutorService executorServiceCached = Executors.newCachedThreadPool();
 
-        for(int i = 1; i<=100; i++){
-            if (i == 100){
+        for(int i = 1; i<=50; i++){
+            if (i == 10){
                 System.out.println("Waiting");
             }
             NumberPrinter numberPrinter = new NumberPrinter(i); // Create a task
             executorServiceCached.execute(numberPrinter); // Execute the task by passing it to the executor service's execute method
         }
+
+        //without shutdown() the program will not terminate
+        executorService.shutdown();  
+        executorServiceCached.shutdown();
     }
 }

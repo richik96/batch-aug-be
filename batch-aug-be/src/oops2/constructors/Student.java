@@ -11,6 +11,6 @@ public class Student {
 
     public Student(Student student){
         age = student.age;
-        name = student.name;
+        name = new String(student.name);
     }
 }
